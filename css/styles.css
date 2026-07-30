@@ -1,0 +1,218 @@
+:root {
+    --background-dark: #080808;
+    --background-section: #101010;
+    --background-card: #181818;
+    --accent-red: #9f1d1d;
+    --accent-red-light: #d13a3a;
+    --text-primary: #ffffff;
+    --text-secondary: #b8b8b8;
+    --border-color: #303030;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navigation */
+
+.navbar {
+    background-color: rgba(8, 8, 8, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.navbar-brand {
+    color: var(--text-primary);
+}
+
+.navbar-brand:hover {
+    color: var(--accent-red-light);
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--text-primary);
+}
+
+/* Hero Section */
+
+.hero-section {
+    position: relative;
+    background-color: #000000;
+    isolation: isolate;
+}
+
+.hero-section canvas {
+    position: absolute !important;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: -2 !important;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.68) 55%,
+            rgba(0, 0, 0, 0.45) 100%);
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.text-accent {
+    color: var(--accent-red-light);
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+}
+
+/* Buttons */
+
+.btn-outline-light {
+    border-width: 2px;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--text-primary);
+    color: #000000;
+    border-color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+/* Main Sections */
+
+#about,
+#skills,
+#projects,
+#contact {
+    position: relative;
+    background-color: var(--background-section);
+}
+
+#about {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+}
+
+#skills,
+#projects,
+#contact {
+    border-top: 1px solid var(--border-color);
+}
+
+/* Section Text */
+
+.text-danger {
+    color: var(--accent-red-light) !important;
+}
+
+.text-light-emphasis {
+    color: var(--text-secondary) !important;
+    line-height: 1.8;
+}
+
+/* Cards */
+
+.card {
+    background-color: var(--background-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-red) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.card strong {
+    color: var(--text-primary);
+}
+
+/* Mobile Adjustments */
+
+@media (max-width: 768px) {
+    .hero-overlay {
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    #about {
+        min-height: auto;
+    }
+}
+
+/* Project Badges */
+
+.project-badge {
+    background-color: rgba(159, 29, 29, 0.18);
+    color: #f1a0a0;
+    border: 1px solid rgba(209, 58, 58, 0.45);
+    padding: 0.55rem 0.75rem;
+    font-weight: 500;
+}
+
+#projects .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+#projects .card-body .btn {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* Contact Section */
+
+.contact-box {
+    max-width: 850px;
+    padding: 4rem 2rem;
+    background-color: var(--background-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+
+.site-footer {
+    background-color: #080808;
+    border-top: 1px solid var(--border-color);
+}
+.hero-actions .btn {
+    min-width: 180px;
+    text-align: center;
+}
