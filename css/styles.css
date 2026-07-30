@@ -108,6 +108,7 @@ body {
 
 #about,
 #skills,
+#certifications,
 #projects,
 #contact {
     position: relative;
@@ -122,6 +123,7 @@ body {
 
 #skills,
 #projects,
+#certifications,
 #contact {
     border-top: 1px solid var(--border-color);
 }
